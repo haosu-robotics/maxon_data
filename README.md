@@ -14,7 +14,7 @@ After we have all the data on motors and gearboxes, we need to determine which m
 Finally, `create_combos.m` reads in the data from `motors.csv`, `gears.csv` and `combos.csv` and writes out a matfile to `motor_gb_data.mat`. 
 
 ## Using the matfile
-Loading `motor_gb_data.mat` will add the struct arrays 'motors' and 'gears' to the workspace. The field 'gb_list' for the motors gives the indices in the 'gears' struct of compatible gearboxes. If if 'gb_list' is empty, there are no compatible motors (this is the case for motors 597974 and 607930 for example). 
+Loading `motor_gb_data.mat` will add the struct arrays 'motors' and 'gears' to the workspace. The field 'gb_list' for the motors gives the indices in the 'gears' struct of compatible gearboxes. If if 'gb_list' is empty, there are no compatible gearboxes (this is the case for motors 597974 and 607930 for example). 
 
 ## Matlab Requirements 
 - Matlab R2019a or later (a handful of html parsing tools were introduced in 2019a)
@@ -27,4 +27,4 @@ Loading `motor_gb_data.mat` will add the struct arrays 'motors' and 'gears' to t
     
     
 ## Notes
-12/19/19: Maxon appears to have changed the inertia values for some of the GPX models since July 2019 (the downloaded html does not match whats online). Mass inertia for GPX models is not given in the PDF catalog so its unclear which is correct. Motor inertia typically dominates gear inertia by at least an order of magnitude so this should not significantly affect the motor/gearbox selection process.     
+12/19/19: Maxon appears to have changed the inertia values for some of the GPX models since July 2019 (the downloaded html does not match what's online). Mass inertia for GPX models is not given in the PDF catalog so its unclear which is correct. Motor inertia typically dominates gear inertia by at least one order of magnitude so this should not significantly affect the motor/gearbox selection process.     
